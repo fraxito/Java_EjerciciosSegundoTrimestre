@@ -41,6 +41,40 @@ public class EjemplosConsola {
     }
     
 
+    private boolean palindromo(String cadena){
+        //primera fase: creo un nuevo String que sea una copia del 
+        //que me pasan pero quitándole los espacios en blanco
+        String auxiliar = "";
+        for (int i=0; i< cadena.length(); i++){
+            if (cadena.charAt(i) != ' '){
+                auxiliar = auxiliar + cadena.charAt(i);
+            }
+        }
+        
+        //ahora en auxiliar tengo el string pero sin espacios en blanco
+        //declaro dos indices para que digan qué posiciones estoy comparando
+        int indiceIzq = 0;
+        int indiceDer = auxiliar.length()-1;
+        
+        //mientras sean iguales los caracteres en esas posiciones la palabra será un palindromo
+        //en el momento en el que una de esas comparaciones falle, es que no es palíndromo
+        
+        //además, si el indice izquierdo es mayor que el derecho, ya he chequeado toda la frase
+        while (auxiliar.charAt(indiceIzq) == auxiliar.charAt(indiceDer) && indiceIzq <= indiceDer){
+            indiceIzq++;
+            indiceDer--;
+        }
+        boolean resultado = true;
+        if (indiceIzq < indiceDer){ // si esto se cumple es que la palabra no es un palíndromo
+            resultado = false;
+        }
+        
+        
+    return resultado; 
+    }
+    
+    
+    
     
     
     /**
@@ -50,12 +84,15 @@ public class EjemplosConsola {
         EjemplosConsola ramon = new EjemplosConsola();
        
         System.out.println( Arrays.toString( ramon.maximos(ramon.listaNumeros)) );
-        
-        System.out.println( Arrays.toString( ramon.maximos(ramon.listaNumeros2)) );
-        
-        System.out.println( Arrays.toString( ramon.maximos(ramon.listaNumeros3)) );
-        
+        System.out.println( Arrays.toString( ramon.maximos(ramon.listaNumeros2)) );  
+        System.out.println( Arrays.toString( ramon.maximos(ramon.listaNumeros3)) ); 
         System.out.println( Arrays.toString( ramon.maximos(ramon.listaNumeros4)) );
+        
+        System.out.println( ramon.palindromo("ACASO HUBO BUHOS ACA") );
+        System.out.println( ramon.palindromo("ACdfgfgddfgASO HUBO BUHOS ACA") );
+        System.out.println( ramon.palindromo("TACOCAT") );
+        System.out.println( ramon.palindromo("TACCAT") );
+        
     }
     
 }
