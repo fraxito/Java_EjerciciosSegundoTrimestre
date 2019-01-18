@@ -68,8 +68,6 @@ public class EjemplosConsola {
         if (indiceIzq < indiceDer){ // si esto se cumple es que la palabra no es un palíndromo
             resultado = false;
         }
-        
-        
     return resultado; 
     }
     
