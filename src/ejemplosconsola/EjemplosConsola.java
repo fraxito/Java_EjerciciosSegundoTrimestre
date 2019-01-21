@@ -67,8 +67,41 @@ public class EjemplosConsola {
         boolean resultado = true;
         if (indiceIzq < indiceDer){ // si esto se cumple es que la palabra no es un palíndromo
             resultado = false;
+            System.out.println("NO ES UN PALINDROMO ");
+        }
+        else{
+            System.out.println("SI ES UN PALINDROMO ");
         }
     return resultado; 
+    }
+    
+    
+    private void palindromoV2(String cadena){
+        String auxiliar = "";
+        for ( int i=0; i< cadena.length(); i++){
+            if (cadena.charAt(i) != ' '){
+                auxiliar = auxiliar + cadena.charAt(i);
+            }
+        }
+        //aquí ya tengo en el string auxiliar todas las letras
+        //de la palabra original pero sin espacios en blanco
+        
+        int indiceIzq = 0;
+        int indiceDer = auxiliar.length() - 1; 
+        
+        while (auxiliar.charAt(indiceIzq) == auxiliar.charAt(indiceDer)  
+                && indiceIzq <= indiceDer){
+            indiceIzq++;
+            indiceDer--;
+        }
+        
+        if (indiceIzq < indiceDer){
+            System.out.println("La cadena " + cadena + " NO es un Palíndromo");
+        }
+        else {
+            System.out.println("La cadena " + cadena + " SI es un Palíndromo");
+        }
+        
     }
     
     
@@ -81,16 +114,21 @@ public class EjemplosConsola {
     public static void main(String[] args) {
         EjemplosConsola ramon = new EjemplosConsola();
        
-        System.out.println( Arrays.toString( ramon.maximos(ramon.listaNumeros)) );
-        System.out.println( Arrays.toString( ramon.maximos(ramon.listaNumeros2)) );  
-        System.out.println( Arrays.toString( ramon.maximos(ramon.listaNumeros3)) ); 
-        System.out.println( Arrays.toString( ramon.maximos(ramon.listaNumeros4)) );
+//        System.out.println( Arrays.toString( ramon.maximos(ramon.listaNumeros)) );
+//        System.out.println( Arrays.toString( ramon.maximos(ramon.listaNumeros2)) );  
+//        System.out.println( Arrays.toString( ramon.maximos(ramon.listaNumeros3)) ); 
+//        System.out.println( Arrays.toString( ramon.maximos(ramon.listaNumeros4)) );
+//        
+//        ramon.palindromo("ACASO HUBO BUHOS ACA") ;
+//        ramon.palindromo("ACdfgfgddfgASO HUBO BUHOS ACA") ;
+//        ramon.palindromo("TACOCAT") ;
+//        ramon.palindromo("TACCAT") ;
         
-        System.out.println( ramon.palindromo("ACASO HUBO BUHOS ACA") );
-        System.out.println( ramon.palindromo("ACdfgfgddfgASO HUBO BUHOS ACA") );
-        System.out.println( ramon.palindromo("TACOCAT") );
-        System.out.println( ramon.palindromo("TACCAT") );
         
+        ramon.palindromoV2("ACASO HUBO BUHOS ACA") ;
+        ramon.palindromoV2("ACdfgfgddfgASO HUBO BUHOS ACA") ;
+        ramon.palindromoV2("TACOCAT") ;
+        ramon.palindromoV2("TACCAT") ;
     }
     
 }
