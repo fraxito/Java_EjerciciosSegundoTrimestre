@@ -40,7 +40,6 @@ public class EjemplosConsola {
         return listaMaximos;
     }
     
-
     private boolean palindromo(String cadena){
         //primera fase: creo un nuevo String que sea una copia del 
         //que me pasan pero quitándole los espacios en blanco
@@ -75,7 +74,6 @@ public class EjemplosConsola {
     return resultado; 
     }
     
-    
     private void palindromoV2(String cadena){
         String auxiliar = "";
         for ( int i=0; i< cadena.length(); i++){
@@ -105,6 +103,20 @@ public class EjemplosConsola {
     }
     
     
+    private boolean esIsograma(String palabra){
+       for (int i=0; i<palabra.length()-1; i++){
+           for (int j=i+1; j<palabra.length(); j++){
+               if (palabra.charAt(j) == palabra.charAt(i)){
+                   return false;
+               }
+           }
+       }
+       //si ha recorrido los dos bucles for enteros, es que 
+       //la palabra no tiene letras repetidas
+       return true;
+    }
+    
+    
     
     
     
@@ -112,7 +124,7 @@ public class EjemplosConsola {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        EjemplosConsola ramon = new EjemplosConsola();
+        EjemplosConsola ejercicios = new EjemplosConsola();
        
 //        System.out.println( Arrays.toString( ramon.maximos(ramon.listaNumeros)) );
 //        System.out.println( Arrays.toString( ramon.maximos(ramon.listaNumeros2)) );  
@@ -125,10 +137,14 @@ public class EjemplosConsola {
 //        ramon.palindromo("TACCAT") ;
         
         
-        ramon.palindromoV2("ACASO HUBO BUHOS ACA") ;
-        ramon.palindromoV2("ACdfgfgddfgASO HUBO BUHOS ACA") ;
-        ramon.palindromoV2("TACOCAT") ;
-        ramon.palindromoV2("TACCAT") ;
+        ejercicios.palindromoV2("ACASO HUBO BUHOS ACA") ;
+        ejercicios.palindromoV2("ACdfgfgddfgASO HUBO BUHOS ACA") ;
+        ejercicios.palindromoV2("TACOCAT") ;
+        ejercicios.palindromoV2("TACCAT") ;
+        
+        System.out.println("TACCAT  " +ejercicios.esIsograma("TACCAT")) ;
+        System.out.println("murcielago  " +ejercicios.esIsograma("murcielago")) ;
+        System.out.println("murcielagoo  " +ejercicios.esIsograma("murcielagoo")) ;
     }
     
 }
