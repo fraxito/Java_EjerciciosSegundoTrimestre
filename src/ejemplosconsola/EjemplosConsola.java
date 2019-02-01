@@ -119,11 +119,11 @@ public class EjemplosConsola {
     
     //Autor: María
     private void imprimeMes(int numx){
-        if (numx >7){
-            numx = 7;
-        }
+        //filtra el número para que siempre valga entre 0 y 7
+        numx = numx % 7;
+
         int contador = 0;
-        //pintara tantas xx como numX sea
+        //pintara tantas xx como numx sea
     
         for (int j=1; j<numx; j++){
             System.out.print("XX ");
@@ -153,6 +153,26 @@ public class EjemplosConsola {
     }
     
     
+    private boolean esAnagrama (String palabraA, String palabraB){
+        //pasamos a mayúsculas todas las letras
+        palabraA = palabraA.toUpperCase();
+        palabraB = palabraB.toUpperCase();
+        
+        boolean anagrama = false;  //indica si las palabras son anagramas o no
+        if (palabraA.length() == palabraB.length()){ //sólo empiezo a chequear si las
+                                                     //dos palabras tienen la misma long
+            for (int i=0; i< palabraA.length(); i++){
+                for (int j=0; j<palabraA.length(); j++){
+                    
+                }
+            }
+        }
+        
+        
+        
+        return anagrama;
+    }
+    
     
     
     /**
@@ -181,12 +201,12 @@ public class EjemplosConsola {
 //        System.out.println("murcielago  " +ejercicios.esIsograma("murcielago")) ;
 //        System.out.println("murcielagoo  " +ejercicios.esIsograma("murcielagoo")) ;
 //        
-        for (int i=7; i<14; i++){
-            ejercicios.imprimeMes(i);
-            System.out.println();
-            System.out.println();
-        }
-        
+//        for (int i=7; i<14; i++){
+//            ejercicios.imprimeMes(i);
+//            System.out.println();
+//            System.out.println();
+//        }
+        ejercicios.imprimeMes(-83);
     }
     
 }
