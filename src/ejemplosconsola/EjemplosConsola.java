@@ -116,6 +116,39 @@ public class EjemplosConsola {
        return true;
     }
     
+    private void imprimeMes(int numx){
+        if (numx >7){
+            numx = 7;
+        }
+        int contador = 0;
+        //pintara tantas xx como numX sea
+    
+        for (int j=1; j<numx; j++){
+            System.out.print("XX ");
+            contador = contador + 1;
+        }
+        for (int i=1; i<=31; i++){
+            if (contador <=7){
+                if (i<=9){
+                    System.out.print("0" + i);
+                    System.out.print(" ");
+                }}
+            if (i>9){
+                System.out.print(i);
+                System.out.print(" ");
+            }
+            contador = contador + 1;
+        
+            if(contador==7){
+                System.out.println("");
+                contador = 0;
+            }
+        }
+        for(int x=contador; x<7; x++){
+            System.out.print("XX ");
+        }
+        
+    }
     
     
     
@@ -137,14 +170,21 @@ public class EjemplosConsola {
 //        ramon.palindromo("TACCAT") ;
         
         
-        ejercicios.palindromoV2("ACASO HUBO BUHOS ACA") ;
-        ejercicios.palindromoV2("ACdfgfgddfgASO HUBO BUHOS ACA") ;
-        ejercicios.palindromoV2("TACOCAT") ;
-        ejercicios.palindromoV2("TACCAT") ;
+//        ejercicios.palindromoV2("ACASO HUBO BUHOS ACA") ;
+//        ejercicios.palindromoV2("ACdfgfgddfgASO HUBO BUHOS ACA") ;
+//        ejercicios.palindromoV2("TACOCAT") ;
+//        ejercicios.palindromoV2("TACCAT") ;
+//        
+//        System.out.println("TACCAT  " +ejercicios.esIsograma("TACCAT")) ;
+//        System.out.println("murcielago  " +ejercicios.esIsograma("murcielago")) ;
+//        System.out.println("murcielagoo  " +ejercicios.esIsograma("murcielagoo")) ;
+//        
+        for (int i=7; i<14; i++){
+            ejercicios.imprimeMes(i);
+            System.out.println();
+            System.out.println();
+        }
         
-        System.out.println("TACCAT  " +ejercicios.esIsograma("TACCAT")) ;
-        System.out.println("murcielago  " +ejercicios.esIsograma("murcielago")) ;
-        System.out.println("murcielagoo  " +ejercicios.esIsograma("murcielagoo")) ;
     }
     
 }
