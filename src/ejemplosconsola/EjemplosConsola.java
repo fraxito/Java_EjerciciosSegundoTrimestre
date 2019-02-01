@@ -116,6 +116,8 @@ public class EjemplosConsola {
        return true;
     }
     
+    
+    //Autor: María
     private void imprimeMes(int numx){
         if (numx >7){
             numx = 7;
