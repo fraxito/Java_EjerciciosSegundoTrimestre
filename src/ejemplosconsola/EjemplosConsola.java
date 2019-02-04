@@ -162,9 +162,21 @@ public class EjemplosConsola {
         if (palabraA.length() == palabraB.length()){ //sólo empiezo a chequear si las
                                                      //dos palabras tienen la misma long
             for (int i=0; i< palabraA.length(); i++){
-                for (int j=0; j<palabraA.length(); j++){
-                    
+                int posicion = 0;
+                //hay un error en el siguiente código:
+                while (palabraA.charAt(i) != palabraB.charAt(posicion) && posicion < palabraB.length()){
+                    posicion++;
                 }
+                if (posicion == palabraB.length()){//la letra no estaba, retorno falso
+                    return false;
+                } 
+                else{  //la letra sí que está en B, la voy a eliminar
+                    palabraB = palabraB.substring(0, posicion)+palabraB.substring(posicion+1);
+                }
+            }
+            
+            if (palabraB.length() == 0){
+                return true;
             }
         }
         
@@ -206,7 +218,11 @@ public class EjemplosConsola {
 //            System.out.println();
 //            System.out.println();
 //        }
-        ejercicios.imprimeMes(-83);
+        //ejercicios.imprimeMes(-83);
+        System.out.println("roma amor  " +ejercicios.esAnagrama("roma", "amor")) ;
+        System.out.println("roma amorr  " +ejercicios.esAnagrama("roma", "amorr")) ;
+        System.out.println("romar amorl  " +ejercicios.esAnagrama("romar", "amorl")) ;
+        System.out.println("roma amor  " +ejercicios.esAnagrama("roma", "amor")) ;
     }
     
 }
