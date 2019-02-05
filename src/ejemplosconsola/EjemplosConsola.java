@@ -163,7 +163,6 @@ public class EjemplosConsola {
                                                      //dos palabras tienen la misma long
             for (int i=0; i< palabraA.length(); i++){
                 int posicion = 0;
-                
                 while (posicion < palabraB.length() && palabraA.charAt(i) != palabraB.charAt(posicion)){
                     posicion++;
                 }
@@ -192,7 +191,7 @@ public class EjemplosConsola {
         System.out.println("roma amor  " +ejercicios.esAnagrama("roma", "amor")) ;
         System.out.println("jamon monja  " +ejercicios.esAnagrama("jamon", "monja")) ;
         System.out.println("jamon pepee  " +ejercicios.esAnagrama("jamon", "pepee")) ;
-        
+        System.out.println("iamlordvoldemort tommarvoloriddle  " +ejercicios.esAnagrama("iamlordvoldemort", "tommarvoloriddle")) ;
        
 //        System.out.println( Arrays.toString( ramon.maximos(ramon.listaNumeros)) );
 //        System.out.println( Arrays.toString( ramon.maximos(ramon.listaNumeros2)) );  
