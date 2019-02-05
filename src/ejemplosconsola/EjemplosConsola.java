@@ -157,6 +157,8 @@ public class EjemplosConsola {
         //pasamos a mayúsculas todas las letras
         palabraA = palabraA.toUpperCase();
         palabraB = palabraB.toUpperCase();
+        palabraA = quitaEspaciosEnBlanco(palabraA);
+        palabraB = quitaEspaciosEnBlanco(palabraB);
         
         boolean anagrama = false;  //indica si las palabras son anagramas o no
         if (palabraA.length() == palabraB.length()){ //sólo empiezo a chequear si las
@@ -180,6 +182,15 @@ public class EjemplosConsola {
         return anagrama;
     }
 
+    private String quitaEspaciosEnBlanco(String frase){
+        String auxiliar = "";
+        for (int i=0; i<frase.length(); i++){
+            if (frase.charAt(i) != ' '){
+                auxiliar = auxiliar + frase.charAt(i);
+            }
+        }
+        return auxiliar;
+    }
     
     
     /**
@@ -191,7 +202,7 @@ public class EjemplosConsola {
         System.out.println("roma amor  " +ejercicios.esAnagrama("roma", "amor")) ;
         System.out.println("jamon monja  " +ejercicios.esAnagrama("jamon", "monja")) ;
         System.out.println("jamon pepee  " +ejercicios.esAnagrama("jamon", "pepee")) ;
-        System.out.println("iamlordvoldemort tommarvoloriddle  " +ejercicios.esAnagrama("iamlordvoldemort", "tommarvoloriddle")) ;
+        System.out.println("i am lord voldemort tom marvolo riddle  " +ejercicios.esAnagrama("i am lord voldemort", "tom marvolo riddle")) ;
        
 //        System.out.println( Arrays.toString( ramon.maximos(ramon.listaNumeros)) );
 //        System.out.println( Arrays.toString( ramon.maximos(ramon.listaNumeros2)) );  
