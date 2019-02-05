@@ -163,8 +163,8 @@ public class EjemplosConsola {
                                                      //dos palabras tienen la misma long
             for (int i=0; i< palabraA.length(); i++){
                 int posicion = 0;
-                //hay un error en el siguiente código:
-                while (palabraA.charAt(i) != palabraB.charAt(posicion) && posicion < palabraB.length()){
+                
+                while (posicion < palabraB.length() && palabraA.charAt(i) != palabraB.charAt(posicion)){
                     posicion++;
                 }
                 if (posicion == palabraB.length()){//la letra no estaba, retorno falso
@@ -174,17 +174,13 @@ public class EjemplosConsola {
                     palabraB = palabraB.substring(0, posicion)+palabraB.substring(posicion+1);
                 }
             }
-            
             if (palabraB.length() == 0){
                 return true;
             }
-        }
-        
-        
-        
+        }    
         return anagrama;
     }
-    
+
     
     
     /**
@@ -192,6 +188,11 @@ public class EjemplosConsola {
      */
     public static void main(String[] args) {
         EjemplosConsola ejercicios = new EjemplosConsola();
+        
+        System.out.println("roma amor  " +ejercicios.esAnagrama("roma", "amor")) ;
+        System.out.println("jamon monja  " +ejercicios.esAnagrama("jamon", "monja")) ;
+        System.out.println("jamon pepee  " +ejercicios.esAnagrama("jamon", "pepee")) ;
+        
        
 //        System.out.println( Arrays.toString( ramon.maximos(ramon.listaNumeros)) );
 //        System.out.println( Arrays.toString( ramon.maximos(ramon.listaNumeros2)) );  
@@ -219,10 +220,10 @@ public class EjemplosConsola {
 //            System.out.println();
 //        }
         //ejercicios.imprimeMes(-83);
-        System.out.println("roma amor  " +ejercicios.esAnagrama("roma", "amor")) ;
-        System.out.println("roma amorr  " +ejercicios.esAnagrama("roma", "amorr")) ;
-        System.out.println("romar amorl  " +ejercicios.esAnagrama("romar", "amorl")) ;
-        System.out.println("roma amor  " +ejercicios.esAnagrama("roma", "amor")) ;
+        
+//        System.out.println("roma amorr  " +ejercicios.esAnagrama("roma", "amorr")) ;
+//        System.out.println("romar amorl  " +ejercicios.esAnagrama("romar", "amorl")) ;
+//        System.out.println("roma amor  " +ejercicios.esAnagrama("roma", "amor")) ;
     }
     
 }
